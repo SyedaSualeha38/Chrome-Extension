@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Exercises and Projects</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f2f5;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 24px;
+        }
+        main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+        section {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin: 20px;
+            padding: 20px;
+            width: 100%;
+            max-width: 600px;
+        }
+        h2 {
+            color: #4CAF50;
+        }
+        input, button {
+            margin: 10px 0;
+            padding: 10px;
+            font-size: 16px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .result {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #333;
+            text-align: center;
+        }
+        .console-output {
+            font-family: monospace;
+            background-color: #333;
+            color: #0f0;
+            padding: 20px;
+            border-radius: 8px;
+            width: 100%;
+            max-width: 600px;
+            white-space: pre-wrap;
+        }
+    </style>
+</head>
+<body>
+    <header>JavaScript Exercises and Projects</header>
+    <main>
+        <!-- Practice Exercise 6.4 -->
+        <section>
+            <h2>Practice Exercise 6.4: Modified Calculator</h2>
+            <button onclick="practice6_4()">Run Calculator</button>
+            <div id="console_output" class="console-output"></div>
+        </section>
+    </main>
+
+    <script>
+        // Practice Exercise 6.4: Modified Calculator
+        function addValues(a, b) {
+            return a + b;
+        }
+
+        function practice6_4() {
+            const results = [];
+            for (let i = 0; i < 10; i++) {
+                const value1 = i * 5;
+                const value2 = i * i;
+                const result = addValues(value1, value2);
+                results.push(result);
+            }
+            document.getElementById('console_output').textContent = `Array values: ${results}`;
+            console.log('Array values:', results);
+        }
+    </script>
+</body>
+</html>
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Calculator</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f2f5;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        .calculator {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: center;
+        }
+        input, select, button {
+            margin: 10px 0;
+            padding: 10px;
+            font-size: 16px;
+            width: calc(100% - 20px);
+            box-sizing: border-box;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .result {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="calculator">
+        <h2>Basic Calculator</h2>
+        <input type="number" id="num1" placeholder="Enter first number">
+        <input type="number" id="num2" placeholder="Enter second number">
+        <select id="operator">
+            <option value="add">Add</option>
+            <option value="subtract">Subtract</option>
+        </select>
+        <button onclick="calculate()">Calculate</button>
+        <div id="result" class="result"></div>
+    </div>
+
+    <script>
+        function calculate() {
+            const num1 = parseFloat(document.getElementById('num1').value);
+            const num2 = parseFloat(document.getElementById('num2').value);
+            const operator = document.getElementById('operator').value;
+            let result;
+
+            if (operator === 'subtract') {
+                result = num1 - num2;
+            } else {
+                result = num1 + num2;
+            }
+
+            document.getElementById('result').textContent = `Result: ${result}`;
+            console.log(`Result: ${result}`);
+        }
+    </script>
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Exercises</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f2f5;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        .exercise {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin: 20px;
+            text-align: center;
+            width: calc(100% - 40px);
+            max-width: 400px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px;
+            margin: 10px 0;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="exercise">
+        <h2>Practice Exercise 6.1</h2>
+        <button onclick="exercise6_1()">Run Exercise 6.1</button>
+        <div id="result6_1"></div>
+    </div>
+    <div class="exercise">
+        <h2>Practice Exercise 6.2</h2>
+        <button onclick="exercise6_2()">Run Exercise 6.2</button>
+        <div id="result6_2"></div>
+    </div>
+
+    <script>
+        // Practice Exercise 6.1: Adding Two Numbers
+        function addNumbers(a, b) {
+            return a + b;
+        }
+
+        function exercise6_1() {
+            const num1 = 5;
+            const num2 = 10;
+            const result1 = addNumbers(num1, num2);
+            console.log('Result 1:', result1);
+
+            const result2 = addNumbers(20, 30);
+            console.log('Result 2:', result2);
+
+            document.getElementById('result6_1').textContent = `Results: ${result1}, ${result2}`;
+        }
+
+        // Practice Exercise 6.2: Randomly Describing an Inputted Name
+        const descriptiveWords = ["amazing", "incredible", "fantastic", "marvelous", "wonderful"];
+
+        function describeName() {
+            const name = prompt("Enter a name:");
+            if (name) {
+                const randomIndex = Math.floor(Math.random() * descriptiveWords.length);
+                const description = descriptiveWords[randomIndex];
+                console.log(`${name} is ${description}!`);
+                document.getElementById('result6_2').textContent = `${name} is ${description}!`;
+            } else {
+                console.log("No name entered.");
+                document.getElementById('result6_2').textContent = "No name entered.";
+            }
+        }
+
+        function exercise6_2() {
+            describeName();
+        }
+    </script>
+</body>
+</html>
+
+////  6.1
+// Function to add two numbers
+function addNumbers(num1, num2) {
+    return num1 + num2;
+}
+
+// First set of variables
+let number1 = 5;
+let number2 = 10;
+
+// First function call
+let result1 = addNumbers(number1, number2);
+console.log(result1); // Outputs: 15
+
+// Second function call with different numbers
+let result2 = addNumbers(20, 25);
+console.log(result2); // Outputs: 45
+
+//// 6.2
+
+// Array of descriptive words
+let descriptiveWords = ["awesome", "brilliant", "fantastic", "amazing", "wonderful", "spectacular", "incredible"];
+
+// Function to prompt for a name and describe it
+function describeName() {
+    let name = prompt("Please enter your name:");
+    let randomIndex = Math.floor(Math.random() * descriptiveWords.length);
+    let randomWord = descriptiveWords[randomIndex];
+    console.log(`${name} is ${randomWord}!`);
+}
+
+// Invoke the function
+describeName();
